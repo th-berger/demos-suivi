@@ -1,0 +1,52 @@
+{
+  "demos": [
+    {
+      "titre": "Portail d’amélioration continue",
+      "langue": "fr",
+      "etapes": 36,
+      "description": "Découvrez en cinq minutes comment une direction industrielle suit son plan d’actions multisite et comment l’animateur prépare ses revues, écran par écran.",
+      "ids": [
+        "accueil",
+        "compteurs",
+        "echeances",
+        "avancement-axe",
+        "gains-accueil",
+        "vers-tableau",
+        "tableau-alertes",
+        "tableau-echeances",
+        "tableau-gains",
+        "tableau-statuts",
+        "vers-matrice",
+        "matrice",
+        "vers-arbre",
+        "arbre-objectifs",
+        "arbre-actions",
+        "vers-retards",
+        "retards-liste",
+        "retards-details",
+        "fiche-action",
+        "fiche-avancement",
+        "gains-controle",
+        "gains-fiche",
+        "vers-decisions",
+        "decisions-liste",
+        "decisions-retard",
+        "decisions-details",
+        "decision-revue",
+        "decision-actions",
+        "revue-details",
+        "revue-entrees",
+        "revue-decisions",
+        "kpi-sqcdp",
+        "kpi-cibles",
+        "kpi-details",
+        "kpi-fiche",
+        "verifications"
+      ],
+      "slug": "amelioration-continue-fr",
+      "chemin": "amelioration-continue-fr/",
+      "octets": 1784924,
+      "maj": "2026-10-28"
+    }
+  ]
+}

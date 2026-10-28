@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Démos interactives Suivi</title>
+<link rel="icon" href="_communs/suivi-mark.svg">
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; font-display: swap; src: url(_communs/Inter-Regular.woff2) format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-display: swap; src: url(_communs/Inter-Medium.woff2) format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 600; font-display: swap; src: url(_communs/Inter-SemiBold.woff2) format("woff2"); }
+:root {
+  color-scheme: light; box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+  --primaire: #b868fd; --sur-primaire: #000000;
+  --encre: #000000; --encre-forte: #151b26; --texte-2: #4d4d4d; --texte-attenue: #828b9d;
+  --surface: #ffffff; --surface-subtile: #f8f8f8; --fond: #f1f4f9; --bordure: #e0e6e8;
+  --ombre: rgba(15,15,15,0.05) 0 0 0 1px, rgba(15,15,15,0.06) 0 3px 6px;
+  --police: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  color-scheme: dark; --encre: #f1f4f9; --encre-forte: #ffffff; --texte-2: #c3c8d2; --texte-attenue: #9aa3b5;
+  --surface: #1f2633; --surface-subtile: #262e3d; --fond: #151b26; --bordure: #333c4d; } }
+:root[data-theme="dark"] { color-scheme: dark; --encre: #f1f4f9; --encre-forte: #ffffff; --texte-2: #c3c8d2; --texte-attenue: #9aa3b5;
+  --surface: #1f2633; --surface-subtile: #262e3d; --fond: #151b26; --bordure: #333c4d; }
+*, *::before, *::after { box-sizing: inherit; }
+body { margin: 0; background: var(--fond); color: var(--encre); font: 400 14px/20px var(--police); -webkit-font-smoothing: antialiased; }
+header { background: var(--surface); border-bottom: 1px solid var(--bordure); }
+.entete { max-width: 1100px; margin: 0 auto; padding: 20px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+.entete img { width: 80px; height: auto; }
+:root[data-theme="dark"] .entete img { filter: invert(1); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .entete img { filter: invert(1); } }
+h1 { margin: 0; font-size: 20px; line-height: 28px; font-weight: 500; color: var(--encre-forte); flex: 1; min-width: 200px; }
+main { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.intro { margin: 0 0 20px; color: var(--texte-2); max-width: 70ch; }
+.grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; }
+.carte { background: var(--surface); border-radius: 10px; box-shadow: var(--ombre); padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+.carte h2 { margin: 0; font-size: 15px; line-height: 20px; font-weight: 600; color: var(--encre-forte); }
+.carte p { margin: 0; color: var(--texte-2); }
+.meta { font-size: 12px; line-height: 18px; color: var(--texte-2); }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 8px; }
+.btn { height: 34px; padding: 0 15px; border-radius: 8px; font: 500 14px/18px var(--police); cursor: pointer; border: 1px solid transparent; display: inline-flex; align-items: center; text-decoration: none; }
+.btn-primaire { background: var(--primaire); color: var(--sur-primaire); }
+.btn-primaire:hover { filter: brightness(.95); }
+.btn-secondaire { background: transparent; color: var(--texte-2); border-color: var(--bordure); }
+.btn-secondaire:hover { background: var(--surface-subtile); color: var(--encre-forte); }
+.btn:focus-visible { outline: 2px solid var(--encre-forte); outline-offset: 2px; }
+.vide { background: var(--surface); border-radius: 10px; padding: 20px; color: var(--texte-2); }
+.statut { min-height: 18px; font-size: 12px; line-height: 18px; color: var(--texte-2); }
+</style>
+</head>
+<body>
+<header><div class="entete"><img src="_communs/suivi-wordmark.svg" alt="Suivi"><h1>Démos interactives Suivi</h1></div></header>
+<main>
+  <p class="intro">Chaque démo s’ouvre dans votre navigateur et s’intègre dans un portail Suivi, sur un site web ou dans un forum avec le code iframe proposé.</p>
+  <div class="grille" id="grille"></div>
+</main>
+<script id="donnees" type="application/json">[{"titre": "Portail d’amélioration continue", "langue": "fr", "etapes": 36, "description": "Découvrez en cinq minutes comment une direction industrielle suit son plan d’actions multisite et comment l’animateur prépare ses revues, écran par écran.", "ids": ["accueil", "compteurs", "echeances", "avancement-axe", "gains-accueil", "vers-tableau", "tableau-alertes", "tableau-echeances", "tableau-gains", "tableau-statuts", "vers-matrice", "matrice", "vers-arbre", "arbre-objectifs", "arbre-actions", "vers-retards", "retards-liste", "retards-details", "fiche-action", "fiche-avancement", "gains-controle", "gains-fiche", "vers-decisions", "decisions-liste", "decisions-retard", "decisions-details", "decision-revue", "decision-actions", "revue-details", "revue-entrees", "revue-decisions", "kpi-sqcdp", "kpi-cibles", "kpi-details", "kpi-fiche", "verifications"], "slug": "amelioration-continue-fr", "chemin": "amelioration-continue-fr/", "octets": 1784924, "maj": "2026-10-28"}]</script>
+<script>
+(function () {
+  "use strict";
+  var demos = JSON.parse(document.getElementById("donnees").textContent);
+  var grille = document.getElementById("grille");
+  var LANGUES = { fr: "Français", en: "Anglais", de: "Allemand", es: "Espagnol", pl: "Polonais" };
+  if (!demos.length) { grille.innerHTML = '<p class="vide">Aucune démo publiée pour le moment.</p>'; return; }
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+  function codeIframe(d) {
+    var url = new URL(d.chemin, location.href).href;
+    return '<div style="position:relative;width:100%;max-width:1200px;aspect-ratio:16/10;margin:0 auto">\n' +
+      '  <iframe src="' + url + '" title="Démo interactive : ' + d.titre.replace(/"/g, "&quot;") + '"\n' +
+      '          style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px"\n' +
+      '          allow="fullscreen" loading="lazy"></iframe>\n</div>';
+  }
+  function copier(texte, statut) {
+    var ok = function () { statut.textContent = "Code iframe copié."; setTimeout(function () { statut.textContent = ""; }, 2500); };
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(texte).then(ok, function () { secours(texte, statut, ok); }); }
+    else secours(texte, statut, ok);
+  }
+  function secours(texte, statut, ok) {
+    var t = document.createElement("textarea"); t.value = texte; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); ok(); } catch (e) { statut.textContent = "Copie impossible : sélectionnez le code manuellement."; }
+    document.body.removeChild(t);
+  }
+  demos.forEach(function (d) {
+    var c = el("article", "carte");
+    c.appendChild(el("h2", null, d.titre));
+    if (d.description) c.appendChild(el("p", null, d.description));
+    c.appendChild(el("span", "meta", d.etapes + " étapes · " + (LANGUES[d.langue] || d.langue) + " · mise à jour le " + d.maj.split("-").reverse().join("/")));
+    var act = el("div", "actions");
+    var a = el("a", "btn btn-primaire", "Ouvrir la démo"); a.href = d.chemin; act.appendChild(a);
+    var b = el("button", "btn btn-secondaire", "Copier le code iframe"); b.type = "button";
+    var statut = el("p", "statut"); statut.setAttribute("aria-live", "polite");
+    b.addEventListener("click", function () { copier(codeIframe(d), statut); });
+    act.appendChild(b); c.appendChild(act); c.appendChild(statut);
+    grille.appendChild(c);
+  });
+})();
+</script>
+</body>
+</html>
